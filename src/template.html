@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://kit.fontawesome.com/a4c5cc7e57.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <div id="container">
+
+    <!-- Side Bar content -->
+    <div class="sidebar">
+      <div class="sidebar__content">
+        <div id="sidebar__add-task" class="sidebar__add-task sidebar-item"><i class="fa-solid fa-circle-plus"></i><span>Añadir tarea</span></div>
+        
+        <div class="sidebar__add-task sidebar-item"><i class="fa-solid fa-circle-check"></i></i><span>Tareas completadas</span></div>
+        
+        <div class="sidebar__add-task sidebar-item"><i class="fa-solid fa-clock-rotate-left"></i><span>Tareas pendientes</span></div>
+        
+        <div class="sidebar__add-task sidebar-item"><i class="fa-solid fa-table-list"></i><span>Lista de tareas</span></div>
+      </div>
+    </div>
+
+
+    <!-- Main content -->
+    <div class="main-content"></div>
+  </div>
+
+
+    <!-- Modal Form -->
+    <form action="" id="modal-form" class="form">
+      <div class="modal__title">
+        <h2>Añade tu tarea</h2>
+        <i class="fa-solid fa-times"></i>
+      </div>
+      <div class="form__group">
+        <div class="form__group-tarea">
+          <label class="form-label" for="tarea">Tarea</label>
+          <input class="form-input" type="text" name="tarea" id="tarea" placeholder="Escribe tu tarea" required>
+        </div>
+        <div class="form__group-description">
+          <label class="form-label" for="description">Descripción</label>
+          <input class="form-input" type="text" required placeholder="Escribe una descripcion...">
+        </div>
+        <div class="form__group-priority">
+          <label class="form-label" for="priority">Prioridad</label>
+          <select required class="form-input" name="priority" id="priority">
+            <option value="low">Baja</option>
+            <option value="medium">Media</option>
+            <option value="high">Alta</option>
+          </select>
+        </div>
+        <div class="form__group-date">
+          <label for="date" class="form-label">Fecha limite</label>
+          <input class="form-input" type="date" name="date" id="date" required>
+        </div>
+      </div>
+      <div class="form__group-add-btn">
+        <button class="form-btn" type="submit">Añadir tarea</button>
+      </div>
+     </form>
+</body>
+</html>
