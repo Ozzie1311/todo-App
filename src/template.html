@@ -12,6 +12,7 @@
     <!-- Side Bar content -->
     <div class="sidebar">
       <div class="sidebar__content">
+        <div id="sidebar__content-logo" class="sidebar__logo sidebar__add-task sidebar-item"><i class="fa-solid fa-list-check"></i><span>Todo List</span></div>
         <div id="sidebar__add-task" class="sidebar__add-task sidebar-item"><i class="fa-solid fa-circle-plus"></i><span>Añadir tarea</span></div>
         
         <div class="sidebar__add-task sidebar-item"><i class="fa-solid fa-circle-check"></i></i><span>Tareas completadas</span></div>
@@ -27,38 +28,34 @@
     <div class="main-content"></div>
   </div>
 
-
     <!-- Modal Form -->
-    <form action="" id="modal-form" class="form">
-      <div class="modal__title">
-        <h2>Añade tu tarea</h2>
-        <i class="fa-solid fa-times"></i>
+    <section class="modal">
+      <div class="modal__content">
+        <h2 class="modal__content-title">Add Task</h2>
+        <form class="form">
+          <div class="form__group">
+            <label class="form__group-label" for="task">Tittle</label>
+            <input class="form__group-input" type="text" id="task" name="task" placeholder="Task" required>
+          </div>
+          <div class="form__group">
+            <label for="description" class="form__group-label">Description</label>
+            <textarea id="description" class="form__group-input" placeholder="Description..."></textarea>
+          </div>
+          <div class="form__group">
+            <label class="form__group-label" for="priority">Priority</label>
+            <select name="" id="priority" class="form__group-input">
+              <option value="low">Low priority</option>
+              <option value="medium">Medium priority</option>
+              <option value="high">High priority</option>
+            </select>
+          </div>
+          <div class="form__group">
+            <button type="submit" class="form__group-send">Add task</button>
+            <button type="button" class="form__group-close">Cancel</button>
+          </div>
+        </form>
       </div>
-      <div class="form__group">
-        <div class="form__group-tarea">
-          <label class="form-label" for="tarea">Tarea</label>
-          <input class="form-input" type="text" name="tarea" id="tarea" placeholder="Escribe tu tarea" required>
-        </div>
-        <div class="form__group-description">
-          <label class="form-label" for="description">Descripción</label>
-          <input class="form-input" type="text" required placeholder="Escribe una descripcion...">
-        </div>
-        <div class="form__group-priority">
-          <label class="form-label" for="priority">Prioridad</label>
-          <select required class="form-input" name="priority" id="priority">
-            <option value="low">Baja</option>
-            <option value="medium">Media</option>
-            <option value="high">Alta</option>
-          </select>
-        </div>
-        <div class="form__group-date">
-          <label for="date" class="form-label">Fecha limite</label>
-          <input class="form-input" type="date" name="date" id="date" required>
-        </div>
-      </div>
-      <div class="form__group-add-btn">
-        <button class="form-btn" type="submit">Añadir tarea</button>
-      </div>
-     </form>
+    </section>
+      
 </body>
 </html>
