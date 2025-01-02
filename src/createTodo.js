@@ -1,12 +1,10 @@
 class CreateTodo {
 
-  constructor(title, description, dueDate, priority) {
-    this.title = title;
-    this.description = description;
-    this.dueDate = dueDate;
-    this.priority = priority;
-    this.done = false;
-  }
-}
+ constructor(title, description, priority) {
+   this.title = title;
+   this.description = description;
+   this.priority = priority;
+ }
+};
 
-export { CreateTodo };
+ export { CreateTodo };
