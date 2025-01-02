@@ -1,14 +1,12 @@
 import { TaskList } from "./taskList";
 import { CreateTask } from "./createTask";
 import { modalShow, modalClose } from "./modalShow";
-import { formControl } from "./formManagement";
+import formControl from "./formManagement";
 
 import "./style.css";
 
 const addTaskButton = document.querySelectorAll(".add-task-button");
 const cancelButton = document.getElementById("form-cancel-button");
-
-const taskList = new TaskList();
 
 addTaskButton.forEach((element) => {
   element.addEventListener("click", () => {
