@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Todo App 📚</title>
   <script src="https://kit.fontawesome.com/a4c5cc7e57.js" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -13,7 +13,7 @@
     <div class="sidebar">
       <div class="sidebar__content">
         <div id="sidebar__content-logo" class="sidebar__logo sidebar__add-task sidebar-item"><i class="fa-solid fa-list-check"></i><span>Todo List</span></div>
-        <div id="sidebar__add-task" class="sidebar__add-task sidebar-item"><i class="fa-solid fa-circle-plus"></i><span>Añadir tarea</span></div>
+        <div id="sidebar__add-task" class="add-task-button sidebar__add-task sidebar-item"><i class="fa-solid fa-circle-plus"></i><span>Añadir tarea</span></div>
         
         <div class="sidebar__add-task sidebar-item"><i class="fa-solid fa-circle-check"></i></i><span>Tareas completadas</span></div>
         
@@ -29,7 +29,7 @@
       <div class="main__content-initial">
         <img src="otraimagen.png" alt="img svg">
         <h2>No hay tareas para mostrar</h2>
-        <button id="main__content-btn" type="button"><i class="fa-solid fa-circle-plus"></i>Add task</button>
+        <button class="add-task-button" id="main__content-btn" type="button"><i class="fa-solid fa-circle-plus"></i>Add task</button>
       </div>
     </div>
   </div>
@@ -57,7 +57,7 @@
           </div>
           <div class="form__group">
             <button type="submit" class="form__group-send">Add task</button>
-            <button type="button" class="form__group-close">Cancel</button>
+            <button id="form-cancel-button" type="button" class="form__group-close">Cancel</button>
           </div>
         </form>
       </div>

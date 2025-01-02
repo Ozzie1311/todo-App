@@ -1,27 +1,23 @@
-import {CreateTodo} from './createTodo.js';
-import { TaskList } from './taskList.js';
-import { addTodo } from './addTodo.js';
-import { clearDiv } from './clear.js';
-import './style.css';
+import { TaskList } from "./taskList";
+import { CreateTask } from "./createTask";
+import { modalShow, modalClose } from "./modalShow";
+import { formControl } from "./formManagement";
 
-const add = document.querySelector('#add');
-const task = new TaskList();
-const addTask = document.querySelector('#sidebar__add-task');
-const modal = document.querySelector('.modal');
-const closeModal = document.querySelector('.form__group-close');
-const addTask2 = document.querySelector('#main__content-btn');
-const form = document.querySelector('form');
+import "./style.css";
 
-addTask2.addEventListener('click', () => {
-  modal.classList.add('modal--show');
-  addTodo();
-})
+const addTaskButton = document.querySelectorAll(".add-task-button");
+const cancelButton = document.getElementById("form-cancel-button");
 
-addTask.addEventListener('click', () => {
-  modal.classList.add('modal--show');
-  addTodo();
+const taskList = new TaskList();
+
+addTaskButton.forEach((element) => {
+  element.addEventListener("click", () => {
+    modalShow();
+  });
 });
 
-closeModal.addEventListener('click',() => {
-  modal.classList.remove('modal--show');
-})
+cancelButton.addEventListener("click", () => {
+  modalClose();
+});
+
+formControl();
