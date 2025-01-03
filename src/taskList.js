@@ -17,6 +17,10 @@ class TaskList {
   getLastTask() {
     return this.tasks[this.tasks.length - 1];
   }
+
+  getTasks() {
+    return this.tasks.map((task) => task);
+  }
 }
 
 export { TaskList };
