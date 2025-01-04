@@ -3,7 +3,7 @@ import { modalClose } from "./modalShow";
 import { TaskList } from "./taskList";
 import renderTask from "./renderTasks";
 import { changeColor, changePriority } from "./changeColor";
-import { last } from "lodash";
+
 
 const newTaskList = new TaskList();
 

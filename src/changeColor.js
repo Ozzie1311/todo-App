@@ -1,48 +1,29 @@
-const changeColor = (status) => {
-  const statusSpan = document.querySelector(
-    ".task__content-container-status-span"
-  );
-  const statusColor = document.querySelector(
-    ".task__content-container-status-color"
-  );
-
+export const changeColor = (status, statusSpan, statusColor) => {
   if (status) {
     statusSpan.textContent = "Completada";
-    statusColor.classList.remove("status-pending");
-    statusColor.classList.add("status-completed");
+    statusColor.style.backgroundColor = "green"; // Color para completada
   } else {
     statusSpan.textContent = "Pendiente";
-    statusColor.classList.remove("status-completed");
-    statusColor.classList.add("status-pending");
+    statusColor.style.backgroundColor = "red"; // Color para pendiente
   }
 };
 
-const changePriority = (priority) => {
-  const icon = document.getElementById("priority-icon");
-  const span = document.getElementById("priority-span");
-
-  if (priority === "Low") {
-    icon.classList.add("priority-low");
-    span.classList.add("priority-low");
-    icon.classList.remove("priority-medium");
-    span.classList.remove("priority-medium");
-    icon.classList.remove("priority-high");
-    span.classList.remove("priority-high");
-  } else if (priority === "Medium") {
-    icon.classList.add("priority-medium");
-    span.classList.add("priority-medium");
-    icon.classList.remove("priority-low");
-    span.classList.remove("priority-low");
-    icon.classList.remove("priority-high");
-    span.classList.remove("priority-high");
-  } else {
-    icon.classList.add("priority-high");
-    span.classList.add("priority-high");
-    icon.classList.remove("priority-low");
-    span.classList.remove("priority-low");
-    icon.classList.remove("priority-medium");
-    span.classList.remove("priority-medium");
+export const changePriority = (priority, priorityIcon, prioritySpan) => {
+  prioritySpan.textContent = priority;
+  switch (priority) {
+    case 'High':
+      prioritySpan.style.color = 'red';
+      priorityIcon.style.color = 'red';
+      break;
+    case 'Medium':
+      prioritySpan.style.color = 'orange';
+      priorityIcon.style.color = 'orange';
+      break;
+    case 'Low':
+      prioritySpan.style.color = 'green';
+      priorityIcon.style.color = 'green';
+      break;
+    default:
+      priorityIcon.style.color = 'gray'; // Color por defecto
   }
 };
-
-export { changeColor, changePriority };

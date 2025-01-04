@@ -1,3 +1,5 @@
+import { changeColor, changePriority } from "./changeColor";
+
 const div = document.createElement("div");
 const renderTask = (title, description, priority, date, status) => {
   const mainContent = document.querySelector(".main__content");
@@ -74,6 +76,10 @@ const renderTask = (title, description, priority, date, status) => {
   div2.append(h3, p, bottomContentDiv);
   div.append(div2);
   mainContent.append(div);
+
+  //llamando a funciones
+  changeColor(status, statusSpan, statusColor);
+  changePriority(priority, priorityIcon, prioritySpan);
 };
 
 export default renderTask;
