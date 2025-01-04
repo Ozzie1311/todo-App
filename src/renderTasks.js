@@ -1,4 +1,5 @@
-import { changeColor, changePriority } from "./changeColor";
+import { changeColor, changePriority, changeColorDate, changeStatus } from "./changeColor";
+import { newTaskList } from "./formManagement";
 
 const div = document.createElement("div");
 const renderTask = (title, description, priority, date, status) => {
@@ -76,8 +77,20 @@ const renderTask = (title, description, priority, date, status) => {
   div2.append(h3, p, bottomContentDiv);
   div.append(div2);
   mainContent.append(div);
+  
+  
+    //Llamando a las funciones de los botones
+newTaskList.getTasks().forEach(() => {
+ buttonsCheck.addEventListener('click', () => {
+    console.log('presionando el boton check');
+ })
+})
+  buttonsRemove.addEventListener("click", () => {
+    console.log("presionando el boton remove");
+  });
 
   //llamando a funciones
+  changeColorDate(calendarIcon, spanDate);
   changeColor(status, statusSpan, statusColor);
   changePriority(priority, priorityIcon, prioritySpan);
 };

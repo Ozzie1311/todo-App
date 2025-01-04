@@ -2,10 +2,9 @@ import { CreateTask } from "./createTask";
 import { modalClose } from "./modalShow";
 import { TaskList } from "./taskList";
 import renderTask from "./renderTasks";
-import { changeColor, changePriority } from "./changeColor";
 
 
-const newTaskList = new TaskList();
+export const newTaskList = new TaskList();
 
 const formControl = () => {
   //Recuperando los elementos necesarios del HTML
@@ -53,9 +52,8 @@ const formControl = () => {
       lastTask.status
     );
 
-    newTaskList.getTasks().forEach((task) => {
-      console.log();
-    });
+
+
     // //Limpiando los valores de los inputs
     taskInput.value = "";
     descriptionInput.value = "";

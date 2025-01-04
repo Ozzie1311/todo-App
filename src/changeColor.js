@@ -2,11 +2,21 @@ export const changeColor = (status, statusSpan, statusColor) => {
   if (status) {
     statusSpan.textContent = "Completada";
     statusColor.style.backgroundColor = "green"; // Color para completada
+    status = false;
   } else {
     statusSpan.textContent = "Pendiente";
-    statusColor.style.backgroundColor = "red"; // Color para pendiente
+    statusColor.style.backgroundColor = "orange"; // Color para pendiente
+    status = true;
   }
 };
+
+export const changeStatus = (status) => {
+  if(status){
+    status = false;
+  } else {
+    status = true;
+  }
+}
 
 export const changePriority = (priority, priorityIcon, prioritySpan) => {
   prioritySpan.textContent = priority;
@@ -27,3 +37,8 @@ export const changePriority = (priority, priorityIcon, prioritySpan) => {
       priorityIcon.style.color = 'gray'; // Color por defecto
   }
 };
+
+export const changeColorDate = (calendarIcon, spanDate) => {
+  calendarIcon.style.color = 'slateblue';
+  spanDate.style.color = 'slateblue';
+}
