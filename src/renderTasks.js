@@ -1,4 +1,9 @@
-import { changeColor, changePriority, changeColorDate, changeStatus } from "./changeColor";
+import {
+  changeColor,
+  changePriority,
+  changeColorDate,
+  changeStatus,
+} from "./changeColor";
 import { newTaskList } from "./formManagement";
 
 const div = document.createElement("div");
@@ -54,6 +59,7 @@ const renderTask = (title, description, priority, date, status) => {
   statusColor.classList.add("task__content-container-status-color");
   priorityIcon.setAttribute("id", "priority-icon");
   prioritySpan.setAttribute("id", "priority-span");
+  buttonsCheck.setAttribute("id", "check-button");
 
   //Creando funcion para cambiar el color del estado
 
@@ -77,16 +83,22 @@ const renderTask = (title, description, priority, date, status) => {
   div2.append(h3, p, bottomContentDiv);
   div.append(div2);
   mainContent.append(div);
-  
-  
-    //Llamando a las funciones de los botones
-newTaskList.getTasks().forEach(() => {
- buttonsCheck.addEventListener('click', () => {
-    console.log('presionando el boton check');
- })
-})
-  buttonsRemove.addEventListener("click", () => {
-    console.log("presionando el boton remove");
+
+  //Llamando a las funciones de los botones
+  buttonsCheck.addEventListener("click", () => {
+    status = true;
+    changeStatus(status, statusSpan, statusColor);
+    // div2.remove();
+    // let tareas = newTaskList.getTasks();
+    // console.log(tareas);
+  });
+
+  buttonsRemove.addEventListener("click", (event) => {
+    event.preventDefault();
+    const parentIndex = Array.from(div.children).indexOf(div2);
+    newTaskList.removeTask(parentIndex);
+    div2.remove();
+    console.log(newTaskList.getTasks());
   });
 
   //llamando a funciones

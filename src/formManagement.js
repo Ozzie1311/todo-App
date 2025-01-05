@@ -3,7 +3,6 @@ import { modalClose } from "./modalShow";
 import { TaskList } from "./taskList";
 import renderTask from "./renderTasks";
 
-
 export const newTaskList = new TaskList();
 
 const formControl = () => {
@@ -52,7 +51,18 @@ const formControl = () => {
       lastTask.status
     );
 
-
+    // const checkButton = document.querySelector("#check-button");
+    // checkButton.addEventListener("click", () => {
+    //   if (newTask.status) {
+    //     console.log("cambiando a true");
+    //     newTask.status = false;
+    //     console.log(newTask);
+    //   } else {
+    //     console.log("cambiando a false");
+    //     newTask.status = true;
+    //     console.log(newTask);
+    //   }
+    // });
 
     // //Limpiando los valores de los inputs
     taskInput.value = "";
