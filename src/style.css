@@ -124,6 +124,7 @@ body {
   flex-direction: column;
   margin-top: 1.5rem;
   justify-content: space-between;
+  list-style: none;
   gap: .75rem;
 }
 
@@ -133,6 +134,7 @@ body {
   padding: 1.7rem 1.2rem;
   background-color: #fefefe;
   border-radius: var(--border-radius);
+  list-style: none;
 }
 
 .right-container {
@@ -201,7 +203,8 @@ input[type = "checkbox"]:checked::before {
   transform: scale(1.1);
 }
 
-.todos li span[contenteditable = "true"]:focus {
+.todos li span[contenteditable = "true"]:focus,
+.todos li p[contenteditable = "true"]:focus {
   outline: none;
   background-color: var(--stats-bg-color);
   border-radius: var(--border-radius);
@@ -209,4 +212,18 @@ input[type = "checkbox"]:checked::before {
   color: var(--header-text-color); 
 }
 
+.todos li span[contenteditable = "true"]:hover,
+.todos li p[contenteditable = "true"]:hover{
+  background-color: var(--border-input-color);
+}
 
+.right-container {
+  display: flex;
+  gap: 1rem;
+}
+
+.right-container .todo-text {
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+}
