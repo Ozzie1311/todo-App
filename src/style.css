@@ -1,4 +1,18 @@
+<<<<<<< HEAD
 @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+=======
+:root {
+  --header-bg-color: #002D62;
+  --header-text-color: #E1EBEE;
+  --button-bg-color: #6F00FF;
+  --border-radius: 0.3rem;
+  --border-input-color:#B9D9EB;
+  --transition-bg-color: all 0.2s ease-in-out;
+  --stats-bg-color: #00538C;
+  --complete-bg-color: #F0F8FF; 
+  --complete-text-color: #6699CC;
+}
+>>>>>>> d8d49b939f8487d5b08315269b61ebd35264ec22
 
 * {
   padding: 0;
@@ -8,6 +22,7 @@
 }
 
 body {
+<<<<<<< HEAD
   min-height: 100vh;
   background-color: #16161a;
 }
@@ -44,11 +59,97 @@ h1 {
   border: none;
   padding: 0.75rem;
   color: #fffffe;
+=======
+  font-family: 'Inter', sans-serif;
+  
+}
+
+h1 {
+  margin-bottom: 2rem;
+}
+/* Styles for Header */
+
+#main-header {
+  padding: 3rem 1rem;
+  color: #fff;  display: flex;
+  background-color: #002D62;
+}
+
+.container {
+  margin: 0 auto;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 760px;
+}
+
+.container #todo-form {
+  display: flex;
+  justify-content: space-around;
+  gap: .25rem;
+  max-width: 760px;
+}
+
+.container h1 {
+  font-size: 2.5rem;
+  color: var(--header-text-color);
+  
+}
+
+.container input {
+  padding: 0.5rem;
+  font-size: 1rem;
+  border: 0;
+  width: 70%;
+  border-radius: var(--border-radius);
+  background-color: var(--header-text-color);
+  transition: background-color 0.3s ease-in;
+}
+
+.container input:focus {
+  outline: none;
+}
+
+.container input:hover {
+  background-color: var(--border-input-color);
+}
+
+.container #submit-button {
+  padding: 0.25rem 2rem;
+  background-color: var(--button-bg-color);
+  color: var(--header-text-color);
+  border: 0;
+  font-size: 1rem;
+  text-transform: uppercase;
+  font-weight: 600;
+  cursor: pointer;
+  border-radius: var(--border-radius);
+  transition: all 0.3s ease;
+}
+
+.container #submit-button:hover {
+  background-color: #545AA7;
+  color: #222;
+}
+
+/* Styles for main section */
+#main {
+  min-height: 100vh;
+  background-color: var(--header-text-color) ;
+}
+
+/* Styles for Stats */
+.stats {
+  display: flex;
+  justify-content: space-evenly;
+>>>>>>> d8d49b939f8487d5b08315269b61ebd35264ec22
 }
 
 .stats li {
   list-style: none;
   display: flex;
+<<<<<<< HEAD
 }
 
 .stats li span {
@@ -86,12 +187,96 @@ h1 {
 .todos li button {
   border: 0;
   padding: 0.25rem;
+=======
+  border-radius: var(--border-radius);
+  color: var(--header-text-color);
+  border: 1px solid var(--stats-bg-color);
+}
+
+.stats li span {
+  font-weight: 600;
+  background-color: var(--stats-bg-color);
+  padding: .25rem .75rem;
+  
+}
+
+.stats li #task-count, .stats li #completed-count, .stats li #remaining-count {
+  background-color: var(--button-bg-color);
+}
+
+/* Style for todos */
+.todos {
+  display: flex;
+  flex-direction: column;
+  margin-top: 1.5rem;
+  justify-content: space-between;
+  list-style: none;
+  gap: .75rem;
+}
+
+.todos .todo-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 1.7rem 1.2rem;
+  background-color: #f5f5f5;
+  border-radius: var(--border-radius);
+  list-style: none;
+}
+
+.right-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.todos li.complete{
+  background-color: var(--complete-bg-color);
+  text-decoration: line-through;
+  color: var(--complete-text-color);
+}
+
+input[type = "checkbox"] {
+  cursor: pointer;
+  appearance: none;
+  background-color: transparent;
+  margin: 0;
+  width: 1.75rem;
+  height: 1.75rem;
+  border-radius: 100%;
+  border: 2px solid var(--header-bg-color);
+  display: grid;
+  place-content: center;
+  transition: var(--transition-bg-color);
+}
+
+input[type = "checkbox"]::before {
+  content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 448 512'%3E%3C!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--%3E%3Cpath d='M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z'/%3E%3C/svg%3E");
+  width: .75rem;
+  height: .75rem;
+  transform: scale(0);
+  transition: var(--transition-bg-color);
+}
+
+input[type = "checkbox"]:checked {
+  background-color: var(--complete-text-color);
+  border-color: var(--complete-text-color);
+}
+
+input[type = "checkbox"]:checked::before {
+  transform: scale(1);
+} 
+
+.todos li button {
+  border: 0;
+  padding: .25rem;
+>>>>>>> d8d49b939f8487d5b08315269b61ebd35264ec22
   display: grid;
   place-content: center;
   background-color: transparent;
 }
 
 .todos li button svg {
+<<<<<<< HEAD
   width: 1.25rem;
   height: 1.25rem;
 }
@@ -127,4 +312,50 @@ input[type="checkbox"]:checked {
 
 input[type="checkbox"]:checked::before {
   transform: scale(1);
+=======
+  width: 1.5rem;
+  height: 1.5rem;
+  fill: var(--stats-bg-color);
+  transition: var(--transition-bg-color);
+  cursor: pointer;
+}
+
+.todos li button svg:hover {
+  fill: var(--header-bg-color);
+  transform: scale(1.1);
+}
+
+.todos li span[contenteditable = "true"]:focus,
+.todos li p[contenteditable = "true"]:focus {
+  outline: none;
+  background-color: var(--stats-bg-color);
+  border-radius: var(--border-radius);
+  padding: .25rem;
+  color: var(--header-text-color); 
+}
+
+.todos li span[contenteditable = "true"]:hover,
+.todos li p[contenteditable = "true"]:hover{
+  background-color: var(--complete-bg-color);
+  border-radius: var(--border-radius);
+}
+
+.todos .span-task {
+  font-size: 1.2rem;
+}
+
+.todo-text p {
+  font-size: .9rem;
+}
+
+.right-container {
+  display: flex;
+  gap: 1rem;
+}
+
+.right-container .todo-text {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+>>>>>>> d8d49b939f8487d5b08315269b61ebd35264ec22
 }
