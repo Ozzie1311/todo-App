@@ -3,118 +3,50 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Google fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Jaro:opsz@6..72&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
   <title>Todo App 📚</title>
+  <!-- Font awesome icons -->
   <script src="https://kit.fontawesome.com/a4c5cc7e57.js" crossorigin="anonymous"></script>
 </head>
-<body>
-  <div id="container">
+<!-- Header -->
+  <header id="main-header">
+    <div class="container">
+      <h1></h1>
 
-    <!-- Side Bar content -->
-    <div class="sidebar">
-      <div class="sidebar__content">
-        <div id="sidebar__content-logo" class="sidebar__logo sidebar__add-task sidebar-item"><i class="fa-solid fa-list-check"></i><span>Todo List</span></div>
-        <div id="sidebar__add-task" class="add-task-button sidebar__add-task sidebar-item"><i class="fa-solid fa-circle-plus"></i><span>Añadir tarea</span></div>
-        
-        <div class="sidebar__add-task sidebar-item"><i class="fa-solid fa-circle-check"></i></i><span>Tareas completadas</span></div>
-        
-        <div class="sidebar__add-task sidebar-item"><i class="fa-solid fa-clock-rotate-left"></i><span>Tareas pendientes</span></div>
-        
-        <div class="sidebar__add-task sidebar-item"><i class="fa-solid fa-table-list"></i><span>Lista de tareas</span></div>
-      </div>
+      <form action="" id="todo-form">
+        <input type="text" name="" id="input-value" placeholder="Una tarea..." autofocus>
+        <input type="text" name="" id="description-value" placeholder="Alguna descripcion">
+        <button type="submit" class="" id="submit-button">add task</button>
+      </form>
+    </div>
+  </header>
+
+<!-- Section stats and todos-->
+  <section id="main">
+    <div class="container" id="main-content">
+      <ul class="stats">
+        <li>
+          <span>Total</span>
+          <span id="task-count"></span></li>
+        <li>
+          <span>Completed</span> 
+          <span id="completed-count"></span></li>
+        <li>
+          <span>Remaining</span>
+          <span id="remaining-count"></span></li>
+      </ul>
     </div>
 
+    <div class="container">
+      <ul class="todos">
+        
+      </ul>
+    </div>
 
-    <!-- Main content -->
-    <div class="main__content">
-      <div class="main__content-initial">
-        <img src="otraimagen.png" alt="img svg">
-        <h2>No hay tareas para mostrar.</h2>
-        <button class="add-task-button" id="main__content-btn" type="button"><i class="fa-solid fa-circle-plus"></i>Añadir tarea</button>
-      </div>
-      <!-- <div class="task__content">
-        <div class="task__content-container">
-          <h2>Titulo de la Tarea</h2>
-          <p>Aqui va el contenido de la descripcion de la tarea</p>
-          <div class="bottom-content">
-            <div class="bottom-content-left">
-              <div class="task__content-container-date">
-                <i class="fa-solid fa-calendar-days"></i>
-                2/01/2025
-              </div>
-            <div class="task__content-container-priority">
-              <i class="fa-regular fa-flag"></i>
-              <span>Low</span>
-            </div>
-          </div>
-          <div class="buttons">
-            <div class="buttons__check btn">
-              <i class="fa-solid fa-check"></i>
-              <span>Check</span>
-            </div>
-            <div class="buttons-remove btn">
-              <i class="fa-solid fa-trash"></i>
-              <span>Remove</span>
-            </div>
-          </div>
-          </div>
-      </div>
-           <div class="task__content-container">
-          <h2>Titulo de la Tarea</h2>
-          <p>Aqui va el contenido de la descripcion de la tarea</p>
-          <div class="bottom-content">
-            <div class="bottom-content-left">
-              <div class="task__content-container-date">
-                <i class="fa-solid fa-calendar-days"></i>
-                2/01/2025
-              </div>
-            <div class="task__content-container-priority">
-              <i class="fa-regular fa-flag"></i>
-              <span>Low</span>
-            </div>
-          </div>
-          <div class="buttons">
-            <div class="buttons__check btn">
-              <i class="fa-solid fa-check"></i>
-              <span>Check</span>
-            </div>
-            <div class="buttons-remove btn">
-              <i class="fa-solid fa-trash"></i>
-              <span>Remove</span>
-            </div>
-          </div>
-          </div>
-      </div>
-    </div> -->
-  </div>
-
-    <!-- Modal Form -->
-    <section class="modal">
-      <div class="modal__content">
-        <h2 class="modal__content-title">Add Task</h2>
-        <form class="form">
-          <div class="form__group">
-            <label class="form__group-label" for="task">Tittle</label>
-            <input class="form__group-input" type="text" id="task" name="task" placeholder="Task" required>
-          </div>
-          <div class="form__group">
-            <label for="description" class="form__group-label">Description</label>
-            <textarea id="description" class="form__group-input" placeholder="Description..."></textarea>
-          </div>
-          <div class="form__group">
-            <label class="form__group-label" for="priority">Priority</label>
-            <select name="" id="priority" class="form__group-input">
-              <option selected value="Low">Low priority</option>
-              <option value="Medium">Medium priority</option>
-              <option value="High">High priority</option>
-            </select>
-          </div>
-          <div class="form__group">
-            <button type="submit" class="form__group-send">Add task</button>
-            <button id="form-cancel-button" type="button" class="form__group-close">Cancel</button>
-          </div>
-        </form>
-      </div>
-    </section>
+  </section>
       
 </body>
 </html>
