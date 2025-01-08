@@ -8,7 +8,7 @@ const todoForm = document.querySelector("#todo-form");
 const todoList = document.querySelector(".todos");
 const mainInput = document.querySelector("#input-value");
 const description = document.querySelector("#description-value");
-//const svg = document.querySelector('.svg-remove-button')
+
 const h1 = document.querySelector("h1");
 
 h1.textContent = `Bienvenido(a) --> ${new Date().toLocaleDateString()}`;
